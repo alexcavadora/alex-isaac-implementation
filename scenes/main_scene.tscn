@@ -7,13 +7,18 @@
 [node name="MainScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_pu3yx")]
+position = Vector2(581, 509)
 
 [node name="Flag" parent="." instance=ExtResource("3_gubc5")]
+position = Vector2(570, 103)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy1" parent="Enemies" instance=ExtResource("1_7ykc4")]
+[node name="EnemyRed" parent="Enemies" instance=ExtResource("1_7ykc4")]
+position = Vector2(570, 255)
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("1_7ykc4")]
+[node name="EnemyBlue" parent="Enemies" instance=ExtResource("1_7ykc4")]
+position = Vector2(811, 434)
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("1_7ykc4")]
+[node name="EnemyYellow" parent="Enemies" instance=ExtResource("1_7ykc4")]
+position = Vector2(351, 445)
