@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dju236svsn53k"]
+[gd_scene load_steps=6 format=3 uid="uid://dju236svsn53k"]
 
 [ext_resource type="Texture2D" uid="uid://dfjtoakgwqjgu" path="res://resources/sprites/entities/player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://c81q0t0fqvfqu" path="res://scripts/characters/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://csnaae5ardb3a" path="res://scenes/components/health_component.tscn" id="3_dqkch"]
+[ext_resource type="PackedScene" uid="uid://ctpib5py0hd2d" path="res://scenes/components/hitbox_component.tscn" id="4_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 
@@ -14,3 +16,11 @@ shape = SubResource("RectangleShape2D_g2els")
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("1_3vyb7")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_dqkch")]
+max_hp = 5.0
+hp = 3.0
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_comp") instance=ExtResource("4_qlg0r")]
+health_comp = NodePath("../HealthComponent")
+can_heal = true

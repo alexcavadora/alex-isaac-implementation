@@ -1,6 +1,6 @@
 extends CharacterBody2D
 class_name Player
-@export var speed = 400
+@export var speed = 200
 
 # Getting the input inside a 2D Vector and setting the velocity accordingly
 func get_input_movement():
