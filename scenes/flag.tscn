@@ -1,9 +1,78 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpi8cj7ceqyaw"]
+[gd_scene load_steps=10 format=3 uid="uid://cpi8cj7ceqyaw"]
 
 [ext_resource type="Texture2D" uid="uid://c8nw7l7h5uidf" path="res://resources/sprites/flags/white_flag.png" id="1_76ss4"]
+[ext_resource type="Script" uid="uid://sqy8ft0vq7he" path="res://scripts/objects/flag.gd" id="1_rjvi2"]
+[ext_resource type="Texture2D" uid="uid://c5yqs6d4u4i5m" path="res://resources/sprites/flags/blue_flag.png" id="2_df0v8"]
+[ext_resource type="Texture2D" uid="uid://dnka20bm4outf" path="res://resources/sprites/flags/green_flag.png" id="3_mir1r"]
+[ext_resource type="Texture2D" uid="uid://c58iysjlahegj" path="res://resources/sprites/flags/orange_flag.png" id="4_aofb0"]
+[ext_resource type="Texture2D" uid="uid://c5qgdw3tmdb15" path="res://resources/sprites/flags/purple_flag.png" id="5_suq27"]
+[ext_resource type="Texture2D" uid="uid://dueyn3sa2ybfk" path="res://resources/sprites/flags/red_flag.png" id="6_s6cpg"]
+[ext_resource type="Texture2D" uid="uid://b55loq008fln5" path="res://resources/sprites/flags/yellow_flag.png" id="8_qfyfp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_py37q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_df0v8")
+}],
+"loop": false,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mir1r")
+}],
+"loop": false,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_aofb0")
+}],
+"loop": false,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_suq27")
+}],
+"loop": false,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_s6cpg")
+}],
+"loop": false,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_76ss4")
+}],
+"loop": false,
+"name": &"white",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_qfyfp")
+}],
+"loop": false,
+"name": &"yellow",
+"speed": 5.0
+}]
 
 [node name="Flag" type="Node2D"]
+script = ExtResource("1_rjvi2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_76ss4")
+sprite_frames = SubResource("SpriteFrames_py37q")
+animation = &"blue"
+autoplay = "white"
