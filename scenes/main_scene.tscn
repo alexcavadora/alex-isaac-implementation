@@ -44,6 +44,7 @@ corner_detail = 6
 
 [node name="Player" parent="." instance=ExtResource("2_pu3yx")]
 position = Vector2(581, 509)
+speed = 400
 
 [node name="Flag" parent="." instance=ExtResource("3_gubc5")]
 position = Vector2(570, 103)
