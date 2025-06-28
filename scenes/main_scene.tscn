@@ -80,7 +80,10 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_pu3yx")
 
 [editable path="Enemies/EnemyBlue"]
 [editable path="Enemies/EnemyBlue/HealthComponent"]
+[editable path="Enemies/EnemyBlue/HurtboxComponent"]
 [editable path="Enemies/EnemyRed"]
 [editable path="Enemies/EnemyRed/HealthComponent"]
+[editable path="Enemies/EnemyRed/HurtboxComponent"]
 [editable path="Enemies/EnemyYellow2"]
 [editable path="Enemies/EnemyYellow2/HealthComponent"]
+[editable path="Enemies/EnemyYellow2/HurtboxComponent"]

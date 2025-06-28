@@ -29,7 +29,7 @@ func die():
 func _ready() -> void:
 	health_bar.max_value = max_hp
 	health_bar.value = hp
-	color = color_idx + 1 #skip white index to start at blue (1)
+	color = color_idx + 1 #skip white index to start at blue for consistency with the flag index
 	print(color)
 	update_fill_color()
 
@@ -37,7 +37,7 @@ func update_bar() -> void:
 	health_bar.value = hp
 
 func update_fill_color() -> void:
-	# select color from editor
+	# selected color from editor
 	match color:
 		1:  # BLUE
 			fill_color = Color.SKY_BLUE
@@ -46,7 +46,7 @@ func update_fill_color() -> void:
 		3:  # YELLOW
 			fill_color = Color.YELLOW
 	
-	# apply the color to the health bar
+	# apply the color to the health bar theme
 	var style_box = health_bar.get_theme_stylebox("fill").duplicate()
 	style_box.bg_color = fill_color
 	health_bar.add_theme_stylebox_override("fill", style_box)

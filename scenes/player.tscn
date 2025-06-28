@@ -3,24 +3,36 @@
 [ext_resource type="Texture2D" uid="uid://dfjtoakgwqjgu" path="res://resources/sprites/entities/player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://c81q0t0fqvfqu" path="res://scripts/characters/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://csnaae5ardb3a" path="res://scenes/components/health_component.tscn" id="3_dqkch"]
-[ext_resource type="PackedScene" uid="uid://ctpib5py0hd2d" path="res://scenes/components/hitbox_component.tscn" id="4_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://ctpib5py0hd2d" path="res://scenes/components/hurtbox_component.tscn" id="4_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(63, 61)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.02, 0.02)
+scale = Vector2(0.075, 0.075)
 texture = ExtResource("1_3vyb7")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_dqkch")]
+visible = false
+position = Vector2(0, -62)
 max_hp = 5.0
 hp = 3.0
+
+[node name="HealthBar" parent="HealthComponent" index="0"]
+offset_left = -30.0
+offset_top = 5.0
+offset_right = 31.0
+offset_bottom = 15.0
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_comp") instance=ExtResource("4_qlg0r")]
 health_comp = NodePath("../HealthComponent")
 can_heal = true
+
+[editable path="HealthComponent"]
