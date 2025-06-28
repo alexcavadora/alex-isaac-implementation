@@ -1,3 +1,38 @@
-[gd_scene format=3 uid="uid://db8dgcckifydm"]
+[gd_scene load_steps=5 format=3 uid="uid://db8dgcckifydm"]
+
+[ext_resource type="Script" uid="uid://cbed5jh41q12y" path="res://scripts/characters/enemy.gd" id="1_4ra3w"]
+[ext_resource type="PackedScene" uid="uid://csnaae5ardb3a" path="res://scenes/components/health_component.tscn" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://4nhd36iisnkx" path="res://resources/sprites/entities/enemy.png" id="2_4ra3w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ra3w"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
 
 [node name="Enemy" type="Area2D"]
+script = ExtResource("1_4ra3w")
+
+[node name="HealthComponent" parent="." instance=ExtResource("1_md0e3")]
+position = Vector2(0, -29)
+max_hp = 3.0
+hp = 3.0
+
+[node name="HealthBar" parent="HealthComponent" index="0"]
+offset_left = -37.0
+offset_right = 40.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_4ra3w")
+max_value = 3.0
+value = 3.0
+
+[node name="Enemy" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_4ra3w")
+
+[editable path="HealthComponent"]

@@ -1,8 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2jd5qrpsg4ch"]
+[gd_scene load_steps=7 format=3 uid="uid://c2jd5qrpsg4ch"]
 
 [ext_resource type="PackedScene" uid="uid://db8dgcckifydm" path="res://scenes/enemy.tscn" id="1_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://dju236svsn53k" path="res://scenes/player.tscn" id="2_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://cpi8cj7ceqyaw" path="res://scenes/flag.tscn" id="3_gubc5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gubc5"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ykc4"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu3yx"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
 
 [node name="MainScene" type="Node2D"]
 
@@ -14,11 +50,37 @@ position = Vector2(570, 103)
 
 [node name="Enemies" type="Node2D" parent="."]
 
+[node name="EnemyBlue" parent="Enemies" instance=ExtResource("1_7ykc4")]
+position = Vector2(351, 445)
+
+[node name="HealthComponent" parent="Enemies/EnemyBlue" index="0"]
+hp = 1.0
+
+[node name="HealthBar" parent="Enemies/EnemyBlue/HealthComponent" index="0"]
+theme_override_styles/fill = SubResource("StyleBoxFlat_gubc5")
+
 [node name="EnemyRed" parent="Enemies" instance=ExtResource("1_7ykc4")]
 position = Vector2(570, 255)
 
-[node name="EnemyBlue" parent="Enemies" instance=ExtResource("1_7ykc4")]
+[node name="HealthComponent" parent="Enemies/EnemyRed" index="0"]
+hp = 2.0
+color_idx = 1
+
+[node name="HealthBar" parent="Enemies/EnemyRed/HealthComponent" index="0"]
+theme_override_styles/fill = SubResource("StyleBoxFlat_7ykc4")
+
+[node name="EnemyYellow2" parent="Enemies" instance=ExtResource("1_7ykc4")]
 position = Vector2(811, 434)
 
-[node name="EnemyYellow" parent="Enemies" instance=ExtResource("1_7ykc4")]
-position = Vector2(351, 445)
+[node name="HealthComponent" parent="Enemies/EnemyYellow2" index="0"]
+color_idx = 2
+
+[node name="HealthBar" parent="Enemies/EnemyYellow2/HealthComponent" index="0"]
+theme_override_styles/fill = SubResource("StyleBoxFlat_pu3yx")
+
+[editable path="Enemies/EnemyBlue"]
+[editable path="Enemies/EnemyBlue/HealthComponent"]
+[editable path="Enemies/EnemyRed"]
+[editable path="Enemies/EnemyRed/HealthComponent"]
+[editable path="Enemies/EnemyYellow2"]
+[editable path="Enemies/EnemyYellow2/HealthComponent"]
