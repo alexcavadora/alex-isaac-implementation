@@ -1,6 +1,5 @@
-extends Area2D
+extends Node2D
 class_name Projectile
-@export var damage : float
 @onready var sprite: Sprite2D = $Sprite
 @export var rotation_deg : float
 

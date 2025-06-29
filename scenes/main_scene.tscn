@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2jd5qrpsg4ch"]
+[gd_scene load_steps=8 format=3 uid="uid://c2jd5qrpsg4ch"]
 
 [ext_resource type="PackedScene" uid="uid://db8dgcckifydm" path="res://scenes/enemy.tscn" id="1_7ykc4"]
+[ext_resource type="Script" uid="uid://c4w7hhk7qqjdu" path="res://scenes/main_scene.gd" id="1_gubc5"]
 [ext_resource type="PackedScene" uid="uid://dju236svsn53k" path="res://scenes/player.tscn" id="2_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://cpi8cj7ceqyaw" path="res://scenes/flag.tscn" id="3_gubc5"]
 
@@ -41,6 +42,7 @@ corner_radius_bottom_left = 6
 corner_detail = 6
 
 [node name="MainScene" type="Node2D"]
+script = ExtResource("1_gubc5")
 
 [node name="Player" parent="." instance=ExtResource("2_pu3yx")]
 position = Vector2(581, 509)
