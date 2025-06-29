@@ -40,6 +40,7 @@ texture = ExtResource("2_4ra3w")
 
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_comp") instance=ExtResource("4_5uy6h")]
 health_comp = NodePath("../HealthComponent")
+can_get_hit = true
 
 [node name="CollisionShape2D" parent="HurtboxComponent" index="0"]
 position = Vector2(7, 5)

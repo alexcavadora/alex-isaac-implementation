@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dju236svsn53k"]
+[gd_scene load_steps=8 format=3 uid="uid://dju236svsn53k"]
 
 [ext_resource type="Texture2D" uid="uid://dfjtoakgwqjgu" path="res://resources/sprites/entities/player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://c81q0t0fqvfqu" path="res://scripts/characters/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://csnaae5ardb3a" path="res://scenes/components/health_component.tscn" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://ctpib5py0hd2d" path="res://scenes/components/hurtbox_component.tscn" id="4_qlg0r"]
+[ext_resource type="Script" uid="uid://bv2rch4f5t54h" path="res://scripts/components/throw_component.gd" id="5_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://b8cljx30m6u2h" path="res://resources/sprites/projectiles/projectile.png" id="6_tuyoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(63, 61)
@@ -33,5 +35,15 @@ offset_bottom = 15.0
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_comp") instance=ExtResource("4_qlg0r")]
 health_comp = NodePath("../HealthComponent")
 can_heal = true
+
+[node name="ThrowComponent" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(0, 70)
+script = ExtResource("5_qlg0r")
+player = NodePath("..")
+offset = 70
+
+[node name="Sprite2D" type="Sprite2D" parent="ThrowComponent"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_tuyoq")
 
 [editable path="HealthComponent"]
