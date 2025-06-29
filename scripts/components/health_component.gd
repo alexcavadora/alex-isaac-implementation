@@ -13,11 +13,12 @@ var color = 0
 """
 var fill_color : Color
 
-func apply_damage(incoming_dmg: float) -> void:
+func apply_damage(incoming_dmg: float) -> int:
 	hp = max(0.0, hp - incoming_dmg)
 	if hp == 0.0:
 		die()
 	update_bar()
+	return color
 
 func apply_heal(incoming_heal: float) -> void:
 	hp = min(max_hp, hp + incoming_heal)
@@ -30,7 +31,7 @@ func _ready() -> void:
 	health_bar.max_value = max_hp
 	health_bar.value = hp
 	color = color_idx + 1 #skip white index to start at blue for consistency with the flag index
-	print(color)
+	#print(color)
 	update_fill_color()
 
 func update_bar() -> void:

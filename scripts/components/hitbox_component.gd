@@ -1,5 +1,5 @@
 extends Area2D
 class_name HitboxComponent
-@export var heal : bool
-@export var damage : bool
+@export var heals : bool
+@export var damages : bool
 @export var value : float
