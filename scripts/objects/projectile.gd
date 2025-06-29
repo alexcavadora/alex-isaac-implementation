@@ -3,8 +3,10 @@ class_name Projectile
 @onready var sprite: Sprite2D = $Sprite
 @export var rotation_deg : float
 @export var speed : float = 15
+@export var _3d : bool
 var moving_direction : Vector2
 var player: Player
+
 signal color_found(int)
 
 func _ready() -> void:
@@ -12,7 +14,12 @@ func _ready() -> void:
 
 func connect_to_player() -> void:
 	var scene_root = get_tree().current_scene
-	var found_player = scene_root.get_node("Player")
+	var found_player
+	if _3d == false:
+		found_player = scene_root.get_node("Player")
+	else:
+		found_player = scene_root.get_node("Sprite3D/SubViewport/MainScene/Player")
+	
 	if found_player and found_player is Player:
 		player = found_player
 		color_found.connect(player._on_color_hit)

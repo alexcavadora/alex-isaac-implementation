@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c2jd5qrpsg4ch"]
 
 [ext_resource type="PackedScene" uid="uid://db8dgcckifydm" path="res://scenes/enemy.tscn" id="1_7ykc4"]
-[ext_resource type="Script" uid="uid://c4w7hhk7qqjdu" path="res://scenes/main_scene.gd" id="1_gubc5"]
+[ext_resource type="Script" uid="uid://c4w7hhk7qqjdu" path="res://scripts/scenes/main_scene.gd" id="1_gubc5"]
 [ext_resource type="PackedScene" uid="uid://dju236svsn53k" path="res://scenes/player.tscn" id="2_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://cpi8cj7ceqyaw" path="res://scenes/flag.tscn" id="3_gubc5"]
 
@@ -89,7 +89,13 @@ position = Vector2(575, 97)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_pu3yx")
 
+[node name="RtxButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "TURN ON RTX"
+
 [connection signal="color_queue_updated" from="Player" to="Flag" method="_on_color_queue_updated"]
+[connection signal="pressed" from="RtxButton" to="." method="_on_rtx_button_pressed"]
 
 [editable path="Enemies/EnemyBlue"]
 [editable path="Enemies/EnemyBlue/HealthComponent"]
