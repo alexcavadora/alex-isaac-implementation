@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctpib5py0hd2d"]
 
-[ext_resource type="Script" uid="uid://cqpkef73vsssu" path="res://scripts/components/hitbox_component.gd" id="1_trd8p"]
+[ext_resource type="Script" uid="uid://cqpkef73vsssu" path="res://scripts/components/hurtbox_component.gd" id="1_trd8p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5rxpd"]
 radius = 39.0512
@@ -10,4 +10,6 @@ script = ExtResource("1_trd8p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5rxpd")
-debug_color = Color(0.980392, 0, 0, 0.419608)
+debug_color = Color(0.840831, 0.000664974, 0.859728, 0.419608)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

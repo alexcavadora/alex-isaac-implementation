@@ -20,7 +20,6 @@ scale = Vector2(0.075, 0.075)
 texture = ExtResource("1_3vyb7")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_dqkch")]
-visible = false
 position = Vector2(0, -62)
 max_hp = 5.0
 hp = 3.0

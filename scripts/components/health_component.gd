@@ -24,7 +24,7 @@ func apply_heal(incoming_heal: float) -> void:
 	update_bar()
 	
 func die():
-	self.queue_free()
+	get_parent().queue_free()
 
 func _ready() -> void:
 	health_bar.max_value = max_hp
