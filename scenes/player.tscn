@@ -37,6 +37,7 @@ health_comp = NodePath("../HealthComponent")
 can_heal = true
 
 [node name="ThrowComponent" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(0, 70)
 script = ExtResource("5_qlg0r")
 player = NodePath("..")
 offset = 70
