@@ -14,7 +14,6 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_ciapp")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("2_3p6mu")]
-heal = true
 value = 1.0
 
 [node name="CollisionShape2D" parent="HitboxComponent" index="0"]
