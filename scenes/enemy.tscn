@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://csnaae5ardb3a" path="res://scenes/components/health_component.tscn" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://4nhd36iisnkx" path="res://resources/sprites/entities/enemy.png" id="2_4ra3w"]
-[ext_resource type="PackedScene" uid="uid://ctpib5py0hd2d" path="res://scenes/components/hitbox_component.tscn" id="4_5uy6h"]
+[ext_resource type="PackedScene" uid="uid://ctpib5py0hd2d" path="res://scenes/components/hurtbox_component.tscn" id="4_5uy6h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ra3w"]
 content_margin_left = 2.0
@@ -38,10 +38,10 @@ value = 3.0
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_4ra3w")
 
-[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_comp") instance=ExtResource("4_5uy6h")]
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_comp") instance=ExtResource("4_5uy6h")]
 health_comp = NodePath("../HealthComponent")
 
-[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+[node name="CollisionShape2D" parent="HurtboxComponent" index="0"]
 position = Vector2(7, 5)
 debug_color = Color(0, 0.58835, 0.677189, 0.419608)
 
@@ -50,4 +50,4 @@ position = Vector2(6, 5)
 shape = SubResource("CircleShape2D_4ra3w")
 
 [editable path="HealthComponent"]
-[editable path="HitboxComponent"]
+[editable path="HurtboxComponent"]

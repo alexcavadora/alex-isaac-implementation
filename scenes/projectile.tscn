@@ -3,19 +3,16 @@
 [ext_resource type="Script" uid="uid://m8wljx2lb04b" path="res://scripts/objects/projectile.gd" id="1_q3m7n"]
 [ext_resource type="Texture2D" uid="uid://b8cljx30m6u2h" path="res://resources/sprites/projectiles/projectile.png" id="2_softn"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q3m7n"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdm4f"]
 radius = 5.0
 
-[node name="Projectile" type="Node2D"]
+[node name="Projectile" type="Area2D"]
 script = ExtResource("1_q3m7n")
 rotation_deg = 30.0
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kdm4f")
+
 [node name="Sprite" type="Sprite2D" parent="."]
-rotation = -3.14159
-scale = Vector2(0.015, 0.015)
+scale = Vector2(-0.015, -0.015)
 texture = ExtResource("2_softn")
-
-[node name="HurtboxComponent" type="Area2D" parent="."]
-
-[node name="CollisionShape" type="CollisionShape2D" parent="HurtboxComponent"]
-shape = SubResource("CircleShape2D_q3m7n")
