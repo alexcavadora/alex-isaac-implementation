@@ -32,7 +32,7 @@ offset_top = 5.0
 offset_right = 31.0
 offset_bottom = 15.0
 
-[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_comp") instance=ExtResource("4_qlg0r")]
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_comp") instance=ExtResource("4_qlg0r")]
 health_comp = NodePath("../HealthComponent")
 can_heal = true
 

@@ -12,7 +12,7 @@ const COLOR_COMBINATIONS = {
 	[1, 1]: "blue",
 	[2, 2]: "red",
 	[3, 3]: "yellow",
-	[1, 2]: "violet",
+	[1, 2]: "purple",
 	[2, 3]: "orange",
 	[1, 3]: "green"
 }
@@ -33,9 +33,9 @@ func update_color(previous_colors: Array[int]) -> String:
 		sprite_2d.play("white")
 		return current_color
 	
-	# first color with white also on queue
-	if color2 == 0:
-		color2 = color1
+	# first color entering (color2) gets duplicated
+	if color1 == 0:
+		color1 = color2
 
 	# sort pair to make mapping order-independent
 	var key = [color1, color2] if color1 < color2 else [color2, color1]
@@ -48,3 +48,6 @@ func update_color(previous_colors: Array[int]) -> String:
 	
 	#if needed returns the color in string
 	return current_color
+
+func _on_color_queue_updated(color_queue : Array[int]):
+	update_color(color_queue)

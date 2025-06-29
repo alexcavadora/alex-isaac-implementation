@@ -6,6 +6,7 @@ const PROJECTILE = preload("res://scenes/projectile.tscn")
 @export var offset : int
 var direction : Vector2
 
+
 func get_orientation():
 	if player.input_direction != Vector2(0.0,0.0):
 		self.position = player.input_direction * offset
