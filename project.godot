@@ -15,6 +15,18 @@ run/main_scene="uid://c2jd5qrpsg4ch"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://resources/models/": "yellow",
+"res://resources/sprites/": "red",
+"res://scenes/characters/": "green",
+"res://scenes/components/": "gray",
+"res://scenes/levels/": "purple",
+"res://scenes/objects/": "orange",
+"res://scripts/": "gray"
+}
+
 [input]
 
 w_press={

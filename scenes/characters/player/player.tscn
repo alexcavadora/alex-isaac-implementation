@@ -13,7 +13,7 @@ size = Vector2(63, 61)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
-[node name="CollisionShape" type="CollisionShape2D" parent="."]
+[node name="PhysicsShape" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_g2els")
 
@@ -22,6 +22,7 @@ scale = Vector2(0.075, 0.075)
 texture = ExtResource("1_3vyb7")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_dqkch")]
+visible = false
 position = Vector2(0, -62)
 max_hp = 5.0
 hp = 3.0

@@ -20,6 +20,7 @@ func _physics_process(delta):
 	
 
 func _on_color_hit(color: int):
+	#fifo structure
 	colors_struck.append(color)
 	colors_struck.pop_front()
 	color_queue_updated.emit(colors_struck)

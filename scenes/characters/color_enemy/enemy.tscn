@@ -35,20 +35,18 @@ offset_right = 40.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_4ra3w")
 max_value = 3.0
 value = 3.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Enemy" type="Sprite2D" parent="."]
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_4ra3w")
 
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_comp") instance=ExtResource("4_5uy6h")]
+position = Vector2(6, 4)
 health_comp = NodePath("../HealthComponent")
 can_get_hit = true
 
-[node name="CollisionShape2D" parent="HurtboxComponent" index="0"]
-position = Vector2(7, 5)
-debug_color = Color(0, 0.58835, 0.677189, 0.419608)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PhysicsCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(6, 5)
 shape = SubResource("CircleShape2D_4ra3w")
 

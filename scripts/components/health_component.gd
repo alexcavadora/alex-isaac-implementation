@@ -30,7 +30,7 @@ func die():
 func _ready() -> void:
 	health_bar.max_value = max_hp
 	health_bar.value = hp
-	color = color_idx + 1 #skip white index to start at blue for consistency with the flag index
+	color = color_idx + 1 #skip white index to start at 1 (blue) for consistency with the flag indexing
 	#print(color)
 	update_fill_color()
 
