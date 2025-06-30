@@ -21,7 +21,8 @@ albedo_color = Color(0.309804, 0.556863, 0.388235, 1)
 size = Vector3(500, 0.5, 500)
 
 [sub_resource type="Gradient" id="Gradient_2se6k"]
-colors = PackedColorArray(0, 0.0392157, 0, 1, 1, 0.941176, 0.901961, 1)
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.12825, 0.027, 0.27, 1, 0.5, 0.35, 0.3525, 1, 1, 0.944828, 0.908073, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_hnoak"]
 gradient = SubResource("Gradient_2se6k")
@@ -34,6 +35,7 @@ sky_material = SubResource("ProceduralSkyMaterial_uafff")
 [sub_resource type="Environment" id="Environment_y00e6"]
 background_mode = 2
 sky = SubResource("Sky_6x6ya")
+ssao_enabled = true
 glow_enabled = true
 glow_normalized = true
 glow_bloom = 0.2
@@ -41,6 +43,7 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.03
 volumetric_fog_emission_energy = 3.0
 volumetric_fog_anisotropy = 0.3
+volumetric_fog_temporal_reprojection_enabled = false
 adjustment_enabled = true
 adjustment_color_correction = SubResource("GradientTexture1D_hnoak")
 
@@ -141,7 +144,7 @@ size = Vector2i(1152, 648)
 _3d = true
 
 [node name="RtxButton" parent="Sprite3D/SubViewport/MainScene" index="4"]
-visible = true
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.994522, 0.104528, 0, -0.104528, 0.994522, 0, 3.5, 6.862)
@@ -161,7 +164,7 @@ mesh = SubResource("BoxMesh_3ef8q")
 environment = SubResource("Environment_y00e6")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.937282, 0.348572, 0, -0.348572, -0.937282, 0, 8.62317, -0.69644)
+transform = Transform3D(0.642788, 0.410467, 0.646793, 0, -0.844328, 0.535827, 0.766044, -0.344423, -0.542724, 0, 8.62317, -0.69644)
 light_color = Color(1, 0.835294, 0.682353, 1)
 light_energy = 3.0
 light_bake_mode = 1

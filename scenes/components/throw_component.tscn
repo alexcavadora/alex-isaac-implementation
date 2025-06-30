@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgjswgwj3fb40"]
+
+[ext_resource type="Script" uid="uid://bv2rch4f5t54h" path="res://scripts/components/throw_component.gd" id="1_j4xhg"]
+[ext_resource type="Texture2D" uid="uid://b8cljx30m6u2h" path="res://resources/sprites/projectiles/projectile.png" id="2_5yovi"]
+
+[node name="ThrowComponent" type="Node2D"]
+script = ExtResource("1_j4xhg")
+offset = 70
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_5yovi")
