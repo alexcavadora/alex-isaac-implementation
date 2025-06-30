@@ -6,4 +6,4 @@ func _input(_event):
 
 
 func _on_rtx_button_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/levels/rtx_main_scene.tscn")

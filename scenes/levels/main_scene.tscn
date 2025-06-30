@@ -37,7 +37,6 @@ position = Vector2(575, 97)
 shape = SubResource("CircleShape2D_pu3yx")
 
 [node name="RtxButton" type="Button" parent="."]
-visible = false
 offset_right = 8.0
 offset_bottom = 8.0
 text = "TURN ON RTX"
