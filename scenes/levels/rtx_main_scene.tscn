@@ -489,3 +489,6 @@ transform = Transform3D(0.541338, 0, -1.39891, 0, 1.5, 0, 1.39891, 0, 0.541338, 
 [editable path="Sprite3D/SubViewport/MainScene"]
 [editable path="Sprite3D/SubViewport/MainScene/Player"]
 [editable path="Sprite3D/SubViewport/MainScene/Player/HealthComponent"]
+[editable path="Sprite3D/SubViewport/MainScene/Enemies/RedEnemy"]
+[editable path="Sprite3D/SubViewport/MainScene/Enemies/RedEnemy/HealthComponent"]
+[editable path="Sprite3D/SubViewport/MainScene/Enemies/RedEnemy/HurtboxComponent"]

@@ -42,11 +42,10 @@ metadata/_edit_use_anchors_ = true
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_4ra3w")
 
-[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_comp", "knockback") instance=ExtResource("4_5uy6h")]
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_comp") instance=ExtResource("4_5uy6h")]
 position = Vector2(6, 4)
 health_comp = NodePath("../HealthComponent")
 can_get_hit = true
-knockback = NodePath("")
 
 [node name="PhysicsCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(6, 5)

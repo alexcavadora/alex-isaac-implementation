@@ -43,7 +43,3 @@ text = "TURN ON RTX"
 
 [connection signal="color_queue_updated" from="Player" to="Flag" method="_on_color_queue_updated"]
 [connection signal="pressed" from="RtxButton" to="." method="_on_rtx_button_pressed"]
-
-[editable path="Enemies/RedEnemy"]
-[editable path="Enemies/RedEnemy/HealthComponent"]
-[editable path="Enemies/RedEnemy/HurtboxComponent"]

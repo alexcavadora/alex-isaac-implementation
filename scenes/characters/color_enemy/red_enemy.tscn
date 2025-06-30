@@ -56,6 +56,7 @@ shape = SubResource("CircleShape2D_pe25n")
 [node name="KnockbackComponent" type="Node" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("5_6e7mc")
 target = NodePath("../Enemy")
+knockback_amount = 2.0
 metadata/_custom_type_script = "uid://yemsj5euawdw"
 
 [editable path="HealthComponent"]
