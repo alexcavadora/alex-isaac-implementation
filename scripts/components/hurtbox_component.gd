@@ -8,8 +8,9 @@ class_name HurtboxComponent
 func _on_area_entered(area: Area2D) -> void:
 	if area is not HitboxComponent:
 		return
+		
 	if health_comp != null:
 		if area.heals and can_heal:
-				health_comp.apply_heal(area.value)
+			health_comp.apply_heal(area.value)
 		if area.damages and can_get_hit:
-				health_comp.apply_damage(area.value)
+			health_comp.apply_damage(area.value)
