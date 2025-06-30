@@ -5,6 +5,7 @@ const PROJECTILE = preload("res://scenes/characters/player/projectile.tscn")
 @export var player : Player
 @export var offset : int
 @export var _3d : bool
+@export var knockback : KnockbackComponent
 var direction : Vector2
 
 
@@ -14,6 +15,7 @@ func get_orientation():
 
 func input_throw():
 	if Input.is_action_just_pressed("throw"):
+		knockback.knock_anim()
 		var scene_root 
 		var instance = PROJECTILE.instantiate()
 		instance.global_position = self.global_position

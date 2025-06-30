@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://db8dgcckifydm"]
+[gd_scene load_steps=8 format=3 uid="uid://db8dgcckifydm"]
 
 [ext_resource type="Script" uid="uid://cbed5jh41q12y" path="res://scripts/characters/enemy.gd" id="1_5uy6h"]
 [ext_resource type="PackedScene" uid="uid://csnaae5ardb3a" path="res://scenes/components/health_component.tscn" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://4nhd36iisnkx" path="res://resources/sprites/entities/enemy.png" id="2_4ra3w"]
 [ext_resource type="PackedScene" uid="uid://ctpib5py0hd2d" path="res://scenes/components/hurtbox_component.tscn" id="4_5uy6h"]
+[ext_resource type="Script" uid="uid://yemsj5euawdw" path="res://scripts/components/knockback_component.gd" id="5_yg563"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ra3w"]
 content_margin_left = 2.0
@@ -41,14 +42,19 @@ metadata/_edit_use_anchors_ = true
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_4ra3w")
 
-[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_comp") instance=ExtResource("4_5uy6h")]
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_comp", "knockback") instance=ExtResource("4_5uy6h")]
 position = Vector2(6, 4)
 health_comp = NodePath("../HealthComponent")
 can_get_hit = true
+knockback = NodePath("")
 
 [node name="PhysicsCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(6, 5)
 shape = SubResource("CircleShape2D_4ra3w")
+
+[node name="KnockbackComponent" type="Node" parent="."]
+script = ExtResource("5_yg563")
+metadata/_custom_type_script = "uid://yemsj5euawdw"
 
 [editable path="HealthComponent"]
 [editable path="HurtboxComponent"]

@@ -37,12 +37,15 @@ offset_bottom = 15.0
 health_comp = NodePath("../HealthComponent")
 can_heal = true
 
-[node name="ThrowComponent" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_qd3e3")]
+[node name="ThrowComponent" parent="." node_paths=PackedStringArray("player", "knockback") instance=ExtResource("5_qd3e3")]
 position = Vector2(0, 70)
 player = NodePath("..")
+knockback = NodePath("../KnockbackComponent")
 
-[node name="KnockbackComponent" type="Node" parent="." node_paths=PackedStringArray("target")]
+[node name="KnockbackComponent" type="Node" parent="." node_paths=PackedStringArray("target", "anchor")]
 script = ExtResource("6_6avc5")
-target = NodePath("..")
+target = NodePath("../Sprite")
+anchor = NodePath("../ThrowComponent")
+time_cooldown = 0.1
 
 [editable path="HealthComponent"]
