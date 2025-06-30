@@ -17,9 +17,6 @@ const COLOR_COMBINATIONS = {
 	[1, 3]: "green"
 }
 
-#func _process(delta: float) -> void: #realtime debugging
-#	update_color(debug_previous)
-
 func _ready() -> void: #loading a saved state 
 	update_color(debug_previous)
 
@@ -33,7 +30,7 @@ func update_color(previous_colors: Array[int]) -> String:
 		sprite_2d.play("white")
 		return current_color
 	
-	# first color entering (color2) gets duplicated
+	# first ever color entered (color2) gets duplicated to simplify mapping
 	if color1 == 0:
 		color1 = color2
 

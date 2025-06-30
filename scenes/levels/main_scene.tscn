@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2jd5qrpsg4ch"]
+
+[ext_resource type="Script" uid="uid://c4w7hhk7qqjdu" path="res://scripts/scenes/main_scene.gd" id="1_gubc5"]
+[ext_resource type="PackedScene" uid="uid://dju236svsn53k" path="res://scenes/characters/player/player.tscn" id="2_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://cpi8cj7ceqyaw" path="res://scenes/objects/flag.tscn" id="3_gubc5"]
+[ext_resource type="PackedScene" uid="uid://dxsttixwcduro" path="res://scenes/characters/color_enemy/red_enemy.tscn" id="4_fiowe"]
+[ext_resource type="PackedScene" uid="uid://kj61xvi3fkf" path="res://scenes/characters/color_enemy/yellow_enemy.tscn" id="5_quawd"]
+[ext_resource type="PackedScene" uid="uid://hw8f2a1cimd2" path="res://scenes/characters/color_enemy/blue_enemy.tscn" id="6_brv2t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pu3yx"]
+radius = 56.3205
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_gubc5")
+
+[node name="Player" parent="." instance=ExtResource("2_pu3yx")]
+position = Vector2(581, 509)
+
+[node name="Flag" parent="." instance=ExtResource("3_gubc5")]
+position = Vector2(570, 103)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="RedEnemy" parent="Enemies" instance=ExtResource("4_fiowe")]
+position = Vector2(570, 255)
+
+[node name="YellowEnemy" parent="Enemies" instance=ExtResource("5_quawd")]
+position = Vector2(811, 434)
+
+[node name="BlueEnemy" parent="Enemies" instance=ExtResource("6_brv2t")]
+position = Vector2(351, 445)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(575, 97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_pu3yx")
+
+[node name="RtxButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "TURN ON RTX"
+
+[connection signal="color_queue_updated" from="Player" to="Flag" method="_on_color_queue_updated"]
+[connection signal="pressed" from="RtxButton" to="." method="_on_rtx_button_pressed"]

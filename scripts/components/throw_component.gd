@@ -1,7 +1,7 @@
 extends Node2D
 class_name ThrowComponent
 
-const PROJECTILE = preload("res://scenes/projectile.tscn")
+const PROJECTILE = preload("res://scenes/characters/player/projectile.tscn")
 @export var player : Player
 @export var offset : int
 @export var _3d : bool
